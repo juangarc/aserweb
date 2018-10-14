@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Departamento;
+use App\Sede;
 use Illuminate\Http\Request;
 
-class DepartamentoController extends Controller
+class SedeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,9 @@ class DepartamentoController extends Controller
     public function index()
     {
         //
+        $sedes = Sede::paginate(5);
+
+    return view('sedes.index', ['sedes' => $sedes]);
     }
 
     /**
@@ -25,6 +28,7 @@ class DepartamentoController extends Controller
     public function create()
     {
         //
+        return view('sedes.create');
     }
 
     /**
@@ -36,15 +40,23 @@ class DepartamentoController extends Controller
     public function store(Request $request)
     {
         //
+        request()->validate([
+            'name' => 'required',
+        ]);
+
+         Sede::create($request->all());
+
+         return redirect()->route('sedes.index')
+                        ->with('success','Post add successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Departamento  $departamento
+     * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function show(Departamento $departamento)
+    public function show(Sede $sede)
     {
         //
     }
@@ -52,34 +64,47 @@ class DepartamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Departamento  $departamento
+     * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function edit(Departamento $departamento)
+    public function edit($id)
     {
         //
+        $sede = Sede::find($id);
+
+        return view('sedes.edit', ['sede' => $sede]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Departamento  $departamento
+     * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Departamento $departamento)
+    public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
+        Sede::find($id)->update($request->all());
+        return redirect()->route('sedes.index')
+                        ->with('success','Sede updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Departamento  $departamento
+     * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Departamento $departamento)
+    public function destroy($id)
     {
         //
+        Sede::destroy($id);
+        return redirect()->route('sedes.index')
+                        ->with('success', 'Sede deleted successfully.');
     }
 }
