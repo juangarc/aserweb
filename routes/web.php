@@ -24,3 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/tipoexamen', 'TipoExamenController');
+
+Route::resource('tipoespecialidad', 'TipoEspecialidadController');
+
+Route::resource('/tipovinculacion', 'TipoVinculacionController');
