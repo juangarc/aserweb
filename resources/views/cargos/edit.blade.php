@@ -42,7 +42,7 @@
                             
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <input type="submit"  value="Editar" class="btn btn-success btn-block">
-                                <a href="{{ route('cargos.index') }}" class="btn btn-info btn-block" >Volver</a>
+                                <a href="{{ route('cargos.index') }}" class="btn btn-info btn-block" >Back</a>
                             </div>  
                             
                          </div>
