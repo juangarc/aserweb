@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-            <h2>Crear un nuevo Tipo de Examen </h2>
+            <h2>Crear un nuevo Tipo de vinculacion </h2>
             <hr>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -13,13 +13,13 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('tipoexamen.store') }}">
+            <form method="post" action="{{ route('tipovinculacion.store') }}">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label>Nombre* </label>
+                    <label>Tipo de vinculacion* </label>
                     <input type="text" name="name" class="form-control">
                 </div>
-                <a href="{{ route('tipoexamen.index') }}" class="btn btn-default">Cancelar</a>
+                <a href="{{ route('tipovinculacion.index') }}" class="btn btn-default">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Crear</button>
             </form>
         </div>

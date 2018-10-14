@@ -11,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($tipoExamenes as $key => $tipoExamen)
+            @foreach($tipoVinculaciones as $key => $tipoVinculacion)
             <tr>
-                <td>{{$tipoExamen->id}}  </td>
-                <td>{{$tipoExamen->name}}</td>
+                <td>{{$tipoVinculacion->id}}  </td>
+                <td>{{$tipoVinculacion->name}}</td>
                 <td style="text-align: center;">
-                    <a href="{{ route('tipoexamen.edit', $tipoExamen->id) }}" class="btn btn-info" >Editar<a></td/>
-                        <td style="text-align: center;"> <form action="{{route('tipoexamen.destroy', $tipoExamen->id)}}" method="post">
+                    <a href="{{ route('tipovinculacion.edit', $tipoVinculacion->id) }}" class="btn btn-info" >Editar<a></td/>
+                        <td style="text-align: center;"> <form action="{{route('tipovinculacion.destroy', $tipoVinculacion->id)}}" method="post">
                            {{csrf_field()}}
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
@@ -28,7 +28,7 @@
                    @endforeach
                </tbody>
            </table>
-           {!!$tipoExamenes->render()!!}
-           <a href="{{ route('tipoexamen.create') }}" class="btn btn-success"  >Crear nuevo tipo<a>
+           {!!$tipoVinculaciones->render()!!}
+           <a href="{{ route('tipovinculacion.create') }}" class="btn btn-success"  >Crear nuevo tipo de vinculacion<a>
            </div>
            @stop
