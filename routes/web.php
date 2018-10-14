@@ -22,3 +22,5 @@ Route::resource('/sedes', 'SedeController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/tipoexamen', 'TipoExamenController');
