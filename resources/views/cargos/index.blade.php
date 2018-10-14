@@ -6,7 +6,7 @@
         <thead>
             <tr>
                 <th>Codigo</th>
-                <th>Nombre</th>
+                <th>Name</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
         </thead>
