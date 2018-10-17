@@ -28,3 +28,7 @@ Route::resource('/tipoexamen', 'TipoExamenController');
 Route::resource('tipoespecialidad', 'TipoEspecialidadController');
 
 Route::resource('/tipovinculacion', 'TipoVinculacionController');
+
+Route::resource('/productos', 'ProductoController');
+
+Route::resource('/tipoausentismos','TipoausentismoController');
