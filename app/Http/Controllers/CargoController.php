@@ -13,9 +13,9 @@ class CargoController extends Controller
      */
     public function index()
     {
-    $cargos = Cargo::paginate(5);
+        $cargos = Cargo::paginate(5);
 
-    return view('cargos.index', ['cargos' => $cargos]);
+        return view('cargos.index', ['cargos' => $cargos]);
     }
 
     /**

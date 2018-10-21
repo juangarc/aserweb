@@ -32,3 +32,5 @@ Route::resource('/tipovinculacion', 'TipoVinculacionController');
 Route::resource('/productos', 'ProductoController');
 
 Route::resource('/tipoausentismos','TipoausentismoController');
+
+Route::resource('/empleados','EmpleadoController');
