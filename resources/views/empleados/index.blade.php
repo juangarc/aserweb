@@ -26,12 +26,12 @@
                 <td>{{$empleado->telefono}}</td>
                 <td>{{$empleado->correoelectronico}}</td>
                 <td>{{$empleado->tipoid}}  </td>
-                <td>{{$empleado->fechanacimiento}}</td>
+                <td>{{$empleado->fechadenacimiento}}</td>
                 <td>{{$empleado->salario}}</td>
                 <td>{{$empleado->id_cargo}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-info" >Editar<a></td/>
-                        <td style="text-align: center;"> <form action="{{route('empelados.destroy', $empleado->id)}}" method="post">
+                        <td style="text-align: center;"> <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
                            {{csrf_field()}}
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>

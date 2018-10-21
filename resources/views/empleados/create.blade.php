@@ -29,11 +29,17 @@
                     <label>Tipo de vinculacion* </label>
                     <input type="number" name="tipoid" class="form-control">
                     <label>Fecha de nacimiento* </label>
-                    <input type="date" name="fechanacimiento" class="form-control">                   
+                    <input type="date" name="fechadenacimiento" class="form-control">                   
                     <label>Salario* </label>
                     <input type="number" name="salario" class="form-control">
                     <label>Cargo* </label>
-                    <input type="select" name="id_cargo" class="form-control">
+                    {{-- <input type="select" name="id_cargo" class="form-control"> --}}
+                    <select name="id_cargo" id="id_cargo" class="form-control">
+                        @foreach ($cargos as $cargo) 
+                        <option value="{{ $cargo['id'] }}">{{ $cargo['name'] }}</option>
+                        @endforeach
+
+                    </select>
 
                 </div>
                 <a href="{{ route('empleados.index') }}" class="btn btn-default">Cancelar</a>

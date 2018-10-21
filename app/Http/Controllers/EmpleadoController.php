@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleado;
+use App\Cargo;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -15,8 +16,9 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::paginate(5);
+        $cargos = Cargo::all();
 
-        return view('empleados.index', ['empleados' => $empleados]);
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'));
     }
 
     /**
@@ -26,7 +28,8 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        return view('empleados.create');
+        $cargos = Cargo::all();
+        return view('empleados.create', compact('cargos'));
     }
 
     /**
@@ -42,9 +45,9 @@ class EmpleadoController extends Controller
             'name' => 'required',
             'apellido' => 'required',
             'telefono' => 'required',
-            'correoelectornico' => 'required',
+            'correoelectronico' => 'required',
             'tipoid' => 'required',
-            'fechanacimiento' => 'required',
+            'fechadenacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',
 
@@ -74,7 +77,7 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empleado $empleado)
+    public function edit( $id)
     {
         $empleado = Empleado::find($id);
 
@@ -88,7 +91,7 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'id' => 'required',
@@ -113,7 +116,7 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empleado $empleado)
+    public function destroy($id)
     {
         Empleado::destroy($id);
         return redirect()->route('empleados.index')
