@@ -51,7 +51,9 @@
                         @foreach ($sedes as $sede) 
                         <option value="{{ $sede['id'] }}">{{ $sede['name'] }}</option>
                         @endforeach
-                    </select>                   
+                    </select>          
+                    <label>Fehca de Ingreso*</label>
+                    <input type="date" name="fechadeingreso" class="form-control">         
 
 
                 </div>

@@ -57,6 +57,7 @@ class EmpleadoController extends Controller
             'salario' => 'required',
             'id_cargo' => 'required',
             'id_sede' => 'required',
+            'fechadeingreso' => 'required',
 
         ]);
 
@@ -111,6 +112,7 @@ class EmpleadoController extends Controller
             'salario' => 'required',
             'id_cargo' => 'required',
             'id_sede' => 'required',
+            'fechadeingreso' => 'required',
         ]);
 
         Empleado::find($id)->update($request->all());

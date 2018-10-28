@@ -26,7 +26,8 @@ class CreateEmpleadosTable extends Migration
             $table->integer('id_cargo')->unsigned();
             $table->foreign('id_cargo')->references('id')->on('cargos'); 
             $table->integer('id_sede')->unsigned();
-            $table->foreign('id_sede')->references('id')->on('sedes');    
+            $table->foreign('id_sede')->references('id')->on('sedes');
+            $table->date('fechadeingreso');    
             $table->timestamps();
             $table->unique('id');
 

@@ -15,6 +15,7 @@
                 <th>Salario</th>
                 <th>Cargo</th>
                 <th>Sede</th>
+                <th>Fecha de Ingreso</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
         </thead>
@@ -31,6 +32,7 @@
                 <td>{{$empleado->salario}}</td>
                 <td>{{$empleado->id_cargo}}</td>
                 <td>{{$empleado->id_sede}}</td>
+                <td>{{$empleado->fechadeingreso}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-info" >Editar<a></td/>
                         <td style="text-align: center;"> <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
