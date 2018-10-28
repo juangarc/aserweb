@@ -26,7 +26,7 @@
                 <td>{{$empleado->apellido}}</td>
                 <td>{{$empleado->telefono}}</td>
                 <td>{{$empleado->correoelectronico}}</td>
-                <td>{{$empleado->tipoid}}  </td>
+                <td>{{$empleado->id_tipovinculacion}}  </td>
                 <td>{{$empleado->fechadenacimiento}}</td>
                 <td>{{$empleado->salario}}</td>
                 <td>{{$empleado->id_cargo}}</td>

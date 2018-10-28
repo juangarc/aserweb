@@ -27,8 +27,8 @@
                     <label>Correo Electronico* </label>
                     <input type="email" name="correoelectronico" class="form-control">
                     <label>Tipo de vinculacion* </label>
-                    {{-- <input type="select" name="tipoid" class="form-control"> --}}
-                    <select name="tipoid" id="tipoid" class="form-control">
+                    {{-- <input type="select" name="id_tipovinculacion" class="form-control"> --}}
+                    <select name="id_tipovinculacion" id="id_tipovinculacion" class="form-control">
                         @foreach ($tipovinculaciones as $tipovinculacion) 
                         <option value="{{ $tipovinculacion['id'] }}">{{ $tipovinculacion['name'] }}</option>
                         @endforeach
