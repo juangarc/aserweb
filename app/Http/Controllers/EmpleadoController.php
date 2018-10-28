@@ -22,7 +22,7 @@ class EmpleadoController extends Controller
         $sedes = Sede::all();
         $tipovinculaciones = TipoVinculacion::all();
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), compact('tipovinculaciones'),compact('sedes'));
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
     }
 
     /**
