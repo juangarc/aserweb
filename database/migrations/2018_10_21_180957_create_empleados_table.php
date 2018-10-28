@@ -24,7 +24,9 @@ class CreateEmpleadosTable extends Migration
             $table->date('fechadenacimiento');
             $table->double('salario');
             $table->integer('id_cargo')->unsigned();
-            $table->foreign('id_cargo')->references('id')->on('cargos');     
+            $table->foreign('id_cargo')->references('id')->on('cargos'); 
+            $table->integer('id_sede')->unsigned();
+            $table->foreign('id_sede')->references('id')->on('sedes');    
             $table->timestamps();
             $table->unique('id');
 

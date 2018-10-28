@@ -14,6 +14,7 @@
                 <th>Fecha de nacimiento</th>
                 <th>Salario</th>
                 <th>Cargo</th>
+                <th>Sede</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td>{{$empleado->fechadenacimiento}}</td>
                 <td>{{$empleado->salario}}</td>
                 <td>{{$empleado->id_cargo}}</td>
+                <td>{{$empleado->id_sede}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-info" >Editar<a></td/>
                         <td style="text-align: center;"> <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
@@ -36,7 +38,7 @@
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
                        </form>
-                       </td>         
+                       </td>
 
                    </tr>
                    @endforeach

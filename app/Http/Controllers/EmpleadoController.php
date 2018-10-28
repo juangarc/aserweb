@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Empleado;
 use App\Cargo;
+use App\Sede;
 use App\TipoVinculacion;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,10 @@ class EmpleadoController extends Controller
     {
         $empleados = Empleado::paginate(5);
         $cargos = Cargo::all();
+        $sedes = Sede::all();
         $tipovinculaciones = TipoVinculacion::all();
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), compact('tipovinculaciones'));
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), compact('tipovinculaciones'),compact('sedes'));
     }
 
     /**
@@ -32,7 +34,8 @@ class EmpleadoController extends Controller
     {
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
-        return view('empleados.create', compact('cargos'), compact('tipovinculaciones'));
+        $sedes = Sede::all();
+        return view('empleados.create', compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
     }
 
     /**
@@ -53,6 +56,7 @@ class EmpleadoController extends Controller
             'fechadenacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',
+            'id_sede' => 'required',
 
         ]);
 
@@ -106,6 +110,7 @@ class EmpleadoController extends Controller
             'fechanacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',
+            'id_sede' => 'required',
         ]);
 
         Empleado::find($id)->update($request->all());

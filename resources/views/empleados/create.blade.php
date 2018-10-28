@@ -44,8 +44,15 @@
                         @foreach ($cargos as $cargo) 
                         <option value="{{ $cargo['id'] }}">{{ $cargo['name'] }}</option>
                         @endforeach
-
                     </select>
+                    <label>Sede*</label>
+                    {{-- <input type="select" name="id_sede" class="form-control"> --}}
+                    <select name="id_sede" id="id_sede" class="form-control">
+                        @foreach ($sedes as $sede) 
+                        <option value="{{ $sede['id'] }}">{{ $sede['name'] }}</option>
+                        @endforeach
+                    </select>                   
+
 
                 </div>
                 <a href="{{ route('empleados.index') }}" class="btn btn-default">Cancelar</a>
