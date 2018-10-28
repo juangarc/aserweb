@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ausentismo extends Model
 {
-    //
+    //algo nuevo
 }
