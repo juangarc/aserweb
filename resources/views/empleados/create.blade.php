@@ -27,7 +27,13 @@
                     <label>Correo Electronico* </label>
                     <input type="email" name="correoelectronico" class="form-control">
                     <label>Tipo de vinculacion* </label>
-                    <input type="number" name="tipoid" class="form-control">
+                    {{-- <input type="select" name="tipoid" class="form-control"> --}}
+                    <select name="tipoid" id="tipoid" class="form-control">
+                        @foreach ($tipovinculaciones as $tipovinculacion) 
+                        <option value="{{ $tipovinculacion['id'] }}">{{ $tipovinculacion['name'] }}</option>
+                        @endforeach
+
+                    </select>
                     <label>Fecha de nacimiento* </label>
                     <input type="date" name="fechadenacimiento" class="form-control">                   
                     <label>Salario* </label>

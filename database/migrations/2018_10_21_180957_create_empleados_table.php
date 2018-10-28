@@ -19,7 +19,8 @@ class CreateEmpleadosTable extends Migration
             $table->string('apellido',50);
             $table->integer('telefono');
             $table->string('correoelectronico',50);
-            $table->string('tipoid');
+            $table->integer('tipoid')->unsigned();
+            $table->foreign('tipoid')->references('id')->on('tipovinculaciones');
             $table->date('fechadenacimiento');
             $table->double('salario');
             $table->integer('id_cargo')->unsigned();

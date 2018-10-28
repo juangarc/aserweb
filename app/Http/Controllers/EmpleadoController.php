@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Empleado;
 use App\Cargo;
+use App\TipoVinculacion;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -17,8 +18,9 @@ class EmpleadoController extends Controller
     {
         $empleados = Empleado::paginate(5);
         $cargos = Cargo::all();
+        $tipovinculaciones = TipoVinculacion::all();
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'));
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), compact('tipovinculaciones'));
     }
 
     /**
@@ -29,7 +31,8 @@ class EmpleadoController extends Controller
     public function create()
     {
         $cargos = Cargo::all();
-        return view('empleados.create', compact('cargos'));
+        $tipovinculaciones = TipoVinculacion::all();
+        return view('empleados.create', compact('cargos'), compact('tipovinculaciones'));
     }
 
     /**
