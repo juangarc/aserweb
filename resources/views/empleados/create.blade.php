@@ -53,7 +53,18 @@
                         @endforeach
                     </select>          
                     <label>Fehca de Ingreso*</label>
-                    <input type="date" name="fechadeingreso" class="form-control">         
+                    <input type="date" name="fechadeingreso" class="form-control">   
+                    <label>Genero*</label>
+                    {{-- <input type="select" name="id_genero" class="form-control"> --}}
+                    <select name="id_genero" id="id_genero" class="form-control">
+                        @foreach ($generos as $genero) 
+                        <option value="{{ $genero['id'] }}">{{ $genero['name'] }}</option>
+                        @endforeach
+                    <label>Estado*</label>
+                    <select name="estado" id="estado" class="form-control">
+                    <option value="{{ $empleado['estado'] }}">{{ $empleado ['estado']}}></option></select>
+
+
 
 
                 </div>
