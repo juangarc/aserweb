@@ -49,7 +49,7 @@ class EmpleadoController extends Controller
             'apellido' => 'required',
             'telefono' => 'required',
             'correoelectronico' => 'required',
-            'tipoid' => 'required',
+            'id_tipovinculacion' => 'required',
             'fechadenacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',
