@@ -30,7 +30,7 @@ class CreateEmpleadosTable extends Migration
             $table->date('fechadeingreso');
             $table->integer('id_genero')->unsigend();
             $table->foreign('id_genero')->references('id')->on('sedes');   
-            $table->enum('estado',array('activo')); 
+            $table->enum('estado',['activo','inactivo']); 
             $table->timestamps();
             $table->unique('id');
 

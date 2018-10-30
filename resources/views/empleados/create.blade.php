@@ -60,13 +60,11 @@
                         @foreach ($generos as $genero) 
                         <option value="{{ $genero['id'] }}">{{ $genero['name'] }}</option>
                         @endforeach
+                    </select>
                     <label>Estado*</label>
                     <select name="estado" id="estado" class="form-control">
-                    <option value="{{ $empleado['estado'] }}">{{ $empleado ['estado']}}></option></select>
-
-
-
-
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
                 </div>
                 <a href="{{ route('empleados.index') }}" class="btn btn-default">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Crear</button>
