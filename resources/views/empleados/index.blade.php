@@ -35,7 +35,7 @@
                 <td>{{$empleado->id_cargo}}</td>
                 <td>{{$empleado->id_sede}}</td>
                 <td>{{$empleado->fechadeingreso}}</td>
-                <td>{{$empleado->genero}}</td>
+                <td>{{$empleado->id_genero}}</td>
                 <td>{{$empleado->estado}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-info" >Editar<a></td/>
