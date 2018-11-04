@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ausentismo extends Model
 {
-    //algo nuevo
+    protected $fillable = ['id','fecha_registro','id_empleado','id_tipoausentismo','area','fecha_inicio','tiempo_ausencia','grado','observacion'];
 }

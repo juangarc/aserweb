@@ -14,7 +14,9 @@ class AusentismoController extends Controller
      */
     public function index()
     {
-        //
+        $ausentismos = Ausentismo::paginate(5);
+
+        return view('ausentimos.index', ['ausentimos' => $ausentismos]);
     }
 
     /**
@@ -24,7 +26,7 @@ class AusentismoController extends Controller
      */
     public function create()
     {
-        //
+        return view('ausentismos.create');
     }
 
     /**
@@ -35,7 +37,21 @@ class AusentismoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'fecha_registro' => 'required',
+            'id_empleado' => 'required',
+            'id_tipoausentismo' => 'required',
+            'area' => 'required',
+            'fecha_inicio' => 'required',
+            'tiempo_ausencia' => 'required',
+            'grado' => 'required',
+            'observacion' => 'required',
+        ]);
+
+         Ausentismo::create($request->all());
+
+         return redirect()->route('ausentismos.index')
+                        ->with('success','Post add successfully.');
     }
 
     /**
@@ -46,7 +62,8 @@ class AusentismoController extends Controller
      */
     public function show(Ausentismo $ausentismo)
     {
-        //
+        $ausentismo = Ausentismo::find($id);
+        return view('ausentismos.show', ['ausentismo' => $ausentismo]);
     }
 
     /**
@@ -57,7 +74,9 @@ class AusentismoController extends Controller
      */
     public function edit(Ausentismo $ausentismo)
     {
-        //
+        $ausentismo = Ausentismo::find($id);
+
+        return view('ausentismos.edit', ['ausentismo' => $ausentismo]);
     }
 
     /**
@@ -69,7 +88,20 @@ class AusentismoController extends Controller
      */
     public function update(Request $request, Ausentismo $ausentismo)
     {
-        //
+        $this->validate($request, [
+            'fecha_registro' => 'required',
+            'id_empleado' => 'required',
+            'id_tipoausentismo' => 'required',
+            'area' => 'required',
+            'fecha_inicio' => 'required',
+            'tiempo_ausencia' => 'required',
+            'grado' => 'required',
+            'observacion' => 'required',
+        ]);
+
+        Ausentismo::find($id)->update($request->all());
+        return redirect()->route('ausentismos.index')
+                        ->with('success','Ausentismo updated successfully');
     }
 
     /**
@@ -80,6 +112,8 @@ class AusentismoController extends Controller
      */
     public function destroy(Ausentismo $ausentismo)
     {
-        //
+        Ausentismo::destroy($id);
+        return redirect()->route('ausentismos.index')
+                        ->with('success', 'Ausentismo deleted successfully.');
     }
 }
