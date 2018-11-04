@@ -35,3 +35,5 @@ Route::resource('/tipoausentismos','TipoausentismoController');
 
 Route::resource('/empleados','EmpleadoController');
 
+Route::resource('/ausentismos','AusnetismoController');
+
