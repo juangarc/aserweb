@@ -32,7 +32,6 @@
                         @foreach ($tipovinculaciones as $tipovinculacion) 
                         <option value="{{ $tipovinculacion['id'] }}">{{ $tipovinculacion['name'] }}</option>
                         @endforeach
-
                     </select>
                     <label>Fecha de nacimiento* </label>
                     <input type="date" name="fechadenacimiento" class="form-control">                   
@@ -65,6 +64,7 @@
                     <select name="estado" id="estado" class="form-control">
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
+                    </select>
                 </div>
                 <a href="{{ route('empleados.index') }}" class="btn btn-default">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Crear</button>
