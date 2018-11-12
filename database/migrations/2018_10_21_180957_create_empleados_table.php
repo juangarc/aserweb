@@ -28,10 +28,10 @@ class CreateEmpleadosTable extends Migration
             $table->integer('id_sede')->unsigned();
             $table->foreign('id_sede')->references('id')->on('sedes');
             $table->date('fechadeingreso');
-            $table->enum('estado',['activo','inactivo']);
-            $table->enum('genero',['masculino','femenino']); 
+            $table->enum('estado',['ACTIVO','INACTIVO']);
+            $table->enum('genero',['MASCULINO','FEMENINO']); 
             $table->timestamps();
-            $table->unique('id');
+            $table->primary('id');
 
         });
     }

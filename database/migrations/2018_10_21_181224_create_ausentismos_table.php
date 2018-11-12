@@ -23,7 +23,7 @@ class CreateAusentismosTable extends Migration
             $table->text('area', 100);
             $table->date('fecha_inicio');
             $table->timestamp('tiempo_ausencia');
-            $table->enum('grado',['leve','severo']);
+            $table->enum('Grado',['Leve','Severo']);
             $table->text('observacion',100);
             $table->unique('id');
 

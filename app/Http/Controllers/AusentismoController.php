@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Ausentismo;
+use App\Empleado;
+use App\Tipoausentismo;
 use Illuminate\Http\Request;
 
 class AusentismoController extends Controller
@@ -15,8 +17,10 @@ class AusentismoController extends Controller
     public function index()
     {
         $ausentismos = Ausentismo::paginate(5);
+        $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentimos.index', ['ausentimos' => $ausentismos]);
+        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -26,7 +30,9 @@ class AusentismoController extends Controller
      */
     public function create()
     {
-        return view('ausentismos.create');
+        $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
+        return view('ausentismos.create', compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -62,8 +68,9 @@ class AusentismoController extends Controller
      */
     public function show(Ausentismo $ausentismo)
     {
-        $ausentismo = Ausentismo::find($id);
-        return view('ausentismos.show', ['ausentismo' => $ausentismo]);
+        $ausentismos = Ausentismo::find($id);
+        
+        return view('ausentismos.show', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -72,11 +79,13 @@ class AusentismoController extends Controller
      * @param  \App\Ausentismo  $ausentismo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ausentismo $ausentismo)
+    public function edit($id)
     {
         $ausentismo = Ausentismo::find($id);
+        $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentismos.edit', ['ausentismo' => $ausentismo]);
+        return view('ausentismos.edit', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -110,7 +119,7 @@ class AusentismoController extends Controller
      * @param  \App\Ausentismo  $ausentismo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ausentismo $ausentismo)
+    public function destroy($id)
     {
         Ausentismo::destroy($id);
         return redirect()->route('ausentismos.index')
