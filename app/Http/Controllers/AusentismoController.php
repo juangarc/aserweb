@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ausentismo;
 use App\Empleado;
+use App\Tipoausentismo;
 use Illuminate\Http\Request;
 
 class AusentismoController extends Controller
@@ -17,8 +18,9 @@ class AusentismoController extends Controller
     {
         $ausentismos = Ausentismo::paginate(5);
         $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'));
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -29,7 +31,8 @@ class AusentismoController extends Controller
     public function create()
     {
         $empleados = Empleado::all();
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'));
+        $tipoausentismos = Tipoausentismo::all();
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -66,7 +69,8 @@ class AusentismoController extends Controller
     public function show(Ausentismo $ausentismo)
     {
         $ausentismo = Ausentismo::find($id);
-        return view('ausentismos.show', ['ausentismo' => $ausentismo]);
+        $tipoausentismos = Tipoausentismo::all();
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -79,8 +83,9 @@ class AusentismoController extends Controller
     {
         $ausentismo = Ausentismo::find($id);
         $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentismos.edit', ['ausentismo' => $ausentismo]);
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
