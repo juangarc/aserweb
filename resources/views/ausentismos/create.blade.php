@@ -41,7 +41,10 @@
                     <label>Tiempo de Ausencia* </label>
                     <input type="datetime" name="tiempo_ausencia" class="form-control">
                     <label>Grado* </label>
-                    <input type="date" name="grado" class="form-control">                   
+                    <select name="grado" id="grado" class="form-control">
+                    <option value="Leve">Leve</option>
+                    <option value="Severo">Severo</option>
+                    </select>                
                     <label>Observacion* </label>
                     <input type="text" name="observacion" class="form-control">    
                     </div>      

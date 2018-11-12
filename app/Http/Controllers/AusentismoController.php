@@ -20,7 +20,7 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -32,7 +32,7 @@ class AusentismoController extends Controller
     {
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -70,7 +70,7 @@ class AusentismoController extends Controller
     {
         $ausentismo = Ausentismo::find($id);
         $tipoausentismos = Tipoausentismo::all();
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -85,7 +85,7 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
