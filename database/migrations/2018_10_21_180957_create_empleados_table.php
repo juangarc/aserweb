@@ -31,7 +31,7 @@ class CreateEmpleadosTable extends Migration
             $table->enum('estado',['activo','inactivo']);
             $table->enum('genero',['masculino','femenino']); 
             $table->timestamps();
-            $table->unique('id');
+            $table->primary('id');
 
         });
     }
