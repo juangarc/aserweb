@@ -7,6 +7,7 @@ use App\Cargo;
 use App\Sede;
 use App\TipoVinculacion;
 use Illuminate\Http\Request;
+use DB;
 
 class EmpleadoController extends Controller
 {
@@ -17,12 +18,17 @@ class EmpleadoController extends Controller
      */ 
     public function index()
     {
-        $empleados = Empleado::paginate(5);
         $cargos = Cargo::all();
         $sedes = Sede::all();
         $tipovinculaciones = TipoVinculacion::all();
+        $empleados = DB::table('empleados')
+        ->join('tipo_vinculacions', 'tipo_vinculacions.id','=', 'empleados.id_tipovinculacion')
+        ->join('sedes', 'sedes.id', '=', 'empleados.id_sede')
+        ->join('cargos', 'cargos.id', '=', 'empleados.id_cargo')
+        ->select('empleados.*', 'tipo_vinculacions.name as nameTipoVinculacion', 'sedes.name as nameSede', 'cargos.name as nameCargo')
+        ->paginate(5);
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes, ] );
     }
 
     /**

@@ -29,11 +29,11 @@
                 <td>{{$empleado->apellido}}</td>
                 <td>{{$empleado->telefono}}</td>
                 <td>{{$empleado->correoelectronico}}</td>
-                <td>{{$empleado->id_tipovinculacion}}  </td>
+                <td>{{$empleado->nameTipoVinculacion}}  </td>
                 <td>{{$empleado->fechadenacimiento}}</td>
                 <td>{{$empleado->salario}}</td>
-                <td>{{$empleado->id_cargo}}</td>
-                <td>{{$empleado->id_sede}}</td>
+                <td>{{$empleado->nameCargo}}</td>
+                <td>{{$empleado->nameSede}}</td>
                 <td>{{$empleado->fechadeingreso}}</td>
                 <td>{{$empleado->genero}}</td>
                 <td>{{$empleado->estado}}</td>
