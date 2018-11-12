@@ -22,7 +22,7 @@
                     {{-- <input type="select" name="id_empleado" class="form-control"> --}}
                     <select name="id_empleado" id="id_empleado" class="form-control">
                         @foreach ($empleados as $empleado) 
-                        <option value="{{ $empleado['id'] }}">{{ $empleado['name'] }}</option>
+                        <option value="{{ $empleado['id'] }}">{{ $empleado['name']." ".$empleado['apellido'] }}</option>
                         @endforeach
                         </select>
                     <label>Tipo de Ausentismo* </label>

@@ -6,6 +6,7 @@ use App\Ausentismo;
 use App\Empleado;
 use App\Tipoausentismo;
 use Illuminate\Http\Request;
+use DB;
 
 class AusentismoController extends Controller
 {
@@ -16,9 +17,13 @@ class AusentismoController extends Controller
      */
     public function index()
     {
-        $ausentismos = Ausentismo::paginate(5);
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
+        $ausentismos = DB::table('ausentismos')
+        ->join('tipoausentismos', 'tipoausentismos.id','=', 'ausentismos.id_tipoausentismo')
+        ->join('empleados', 'empleados.id', '=', 'ausentismos.id_empleado')
+        ->select('ausentismos.*', 'tipoausentismos.name as nameTipoausentismo', 'empleados.name as nameEmpleado','empleados.apellido as apellidoEmpleado')
+        ->paginate(5);
 
         return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
