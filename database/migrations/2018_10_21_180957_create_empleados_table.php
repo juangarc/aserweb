@@ -20,7 +20,7 @@ class CreateEmpleadosTable extends Migration
             $table->integer('telefono');
             $table->string('correoelectronico',50);
             $table->integer('id_tipovinculacion')->unsigned();
-            $table->foreign('id_tipovinculacion')->references('id')->on('tipovinculaciones');
+            $table->foreign('id_tipovinculacion')->references('id')->on('tipo_vinculacions');
             $table->date('fechadenacimiento');
             $table->double('salario');
             $table->integer('id_cargo')->unsigned();
@@ -29,7 +29,7 @@ class CreateEmpleadosTable extends Migration
             $table->foreign('id_sede')->references('id')->on('sedes');
             $table->date('fechadeingreso');
             $table->integer('id_genero')->unsigend();
-            $table->foreign('id_genero')->references('id')->on('sedes');   
+            $table->foreign('id_genero')->references('id')->on('generos');   
             $table->enum('estado',['activo','inactivo']); 
             $table->timestamps();
             $table->unique('id');
