@@ -54,11 +54,9 @@
                     <label>Fehca de Ingreso*</label>
                     <input type="date" name="fechadeingreso" class="form-control">   
                     <label>Genero*</label>
-                    {{-- <input type="select" name="id_genero" class="form-control"> --}}
-                    <select name="id_genero" id="id_genero" class="form-control">
-                        @foreach ($generos as $genero) 
-                        <option value="{{ $genero['id'] }}">{{ $genero['name'] }}</option>
-                        @endforeach
+                    <select name="genero" id="genero" class="form-control">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
                     </select>                
                     <label>Estado*</label>
                     <select name="estado" id="estado" class="form-control">

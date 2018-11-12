@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Empleado;
 use App\Cargo;
 use App\Sede;
-use App\Genero;
 use App\TipoVinculacion;
 use Illuminate\Http\Request;
 
@@ -21,7 +20,6 @@ class EmpleadoController extends Controller
         $empleados = Empleado::paginate(5);
         $cargos = Cargo::all();
         $sedes = Sede::all();
-        $generos = Genero::all();
         $tipovinculaciones = TipoVinculacion::all();
 
         return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes , 'generos' => $generos] );
@@ -37,7 +35,6 @@ class EmpleadoController extends Controller
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
         $sedes = Sede::all();
-        $generos = Genero::all();
         return view('empleados.create', compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes, 'generos' => $generos] );
     }
 
@@ -61,7 +58,7 @@ class EmpleadoController extends Controller
             'id_cargo' => 'required',
             'id_sede' => 'required',
             'fechadeingreso' => 'required',
-            'id_genero' => 'required',
+            'genero' => 'required',
             'estado' => 'required',
 
         ]);
@@ -96,7 +93,7 @@ class EmpleadoController extends Controller
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
         $sedes = Sede::all();
-        $generos = Genero::all();
+
 
         return view('empleados.edit', ['empleado' => $empleado], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes , 'generos' => $generos] );
     }
@@ -122,7 +119,7 @@ class EmpleadoController extends Controller
             'id_cargo' => 'required',
             'id_sede' => 'required',
             'fechadeingreso' => 'required',
-            'id_genero' => 'required',
+            'genero' => 'required',
             'estado' => 'required',
         ]);
 
