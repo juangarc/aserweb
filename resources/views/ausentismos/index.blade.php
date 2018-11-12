@@ -16,7 +16,7 @@
                 <th>Observacion</th>>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
-        </thead>
+        </thead> 
         <tbody>
             @foreach($ausentismos as $key => $ausentismo)
             <tr>
@@ -27,7 +27,7 @@
                 <td>{{$ausentismo->area}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
-                <td>{{$ausentismo->grado}}</td>
+                <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('ausentismos.edit', $ausentismo->id) }}" class="btn btn-info" >Editar<a></td/>

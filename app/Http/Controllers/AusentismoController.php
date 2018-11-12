@@ -20,7 +20,7 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentismos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -32,7 +32,7 @@ class AusentismoController extends Controller
     {
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
-        return view('ausentismos.index', ['ausentimos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.create', compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -68,9 +68,9 @@ class AusentismoController extends Controller
      */
     public function show(Ausentismo $ausentismo)
     {
-        $ausentismo = Ausentismo::find($id);
-        $tipoausentismos = Tipoausentismo::all();
-        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        $ausentismos = Ausentismo::find($id);
+        
+        return view('ausentismos.show', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -85,7 +85,7 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
 
-        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.edit', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
     }
 
     /**
@@ -119,7 +119,7 @@ class AusentismoController extends Controller
      * @param  \App\Ausentismo  $ausentismo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ausentismo $ausentismo)
+    public function destroy($id)
     {
         Ausentismo::destroy($id);
         return redirect()->route('ausentismos.index')
