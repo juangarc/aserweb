@@ -47,7 +47,7 @@
                             <input type="email" name="correoelectronico" value="{{$empleado->correoelectronico}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class='form-group'>
-                       {{-- <input type="select" name="id_tipovinculacion" value="{{$empleado->id_tipovinculacion}}" id="empleado_title" class="form-control input-sm"> --}}  
+                       {{-- <input type="select" name="id_tipovinculacion"  id="empleado_title" class="form-control input-sm"> --}}  
                             <select name="id_tipovinculacion" id="id_tipovinculacion" class="form-control">
                             @foreach ($tipovinculaciones as $tipovinculacion) 
                             <option value="{{ $tipovinculacion['id'] }}">{{ $tipovinculacion['name'] }}</option>
