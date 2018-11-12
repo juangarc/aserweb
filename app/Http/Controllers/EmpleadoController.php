@@ -93,8 +93,12 @@ class EmpleadoController extends Controller
     public function edit( $id)
     {
         $empleado = Empleado::find($id);
+        $cargos = Cargo::all();
+        $tipovinculaciones = TipoVinculacion::all();
+        $sedes = Sede::all();
+        $generos = Genero::all();
 
-        return view('empleados.edit', ['empleado' => $empleado]);
+        return view('empleados.edit', ['empleado' => $empleado], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes , 'generos' => $generos] );
     }
 
     /**
