@@ -117,7 +117,6 @@ class EmpleadoController extends Controller
             'apellido' => 'required',
             'telefono' => 'required',
             'correoelectronico' => 'required',
-            
             //'fechanacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',

@@ -32,21 +32,27 @@
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
+                                    <label>Codigo empleado* </label>
                             <input type="number" name="id" value="{{$empleado->id}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class="form-group">
+                                    <label>Nombres* </label>
                             <input type="text" name="name" value="{{$empleado->name}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class="form-group">
+                                    <label>Apellidos* </label>
                             <input type="text" name="apellido" value="{{$empleado->apellido}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class="form-group">
+                                    <label>Telefono* </label>
                             <input type="number" name="telefono" value="{{$empleado->telefono}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class="form-group">
+                                    <label>Correo electronico* </label>
                             <input type="email" name="correoelectronico" value="{{$empleado->correoelectronico}}" id="empleado_title" class="form-control input-sm" >
                                     </div>
                                     <div class='form-group'>
+                                    <label>Tipo vinculacion* </label>
                        {{-- <input type="select" name="id_tipovinculacion"  id="empleado_title" class="form-control input-sm"> --}}  
                             <select name="id_tipovinculacion" id="id_tipovinculacion" class="form-control">
                             @foreach ($tipovinculaciones as $tipovinculacion) 
