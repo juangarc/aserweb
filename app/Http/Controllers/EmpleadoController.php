@@ -22,7 +22,7 @@ class EmpleadoController extends Controller
         $sedes = Sede::all();
         $tipovinculaciones = TipoVinculacion::all();
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes , 'generos' => $generos] );
+        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
     }
 
     /**
@@ -35,7 +35,7 @@ class EmpleadoController extends Controller
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
         $sedes = Sede::all();
-        return view('empleados.create', compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes, 'generos' => $generos] );
+        return view('empleados.create', compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
     }
 
     /**
@@ -95,7 +95,7 @@ class EmpleadoController extends Controller
         $sedes = Sede::all();
 
 
-        return view('empleados.edit', ['empleado' => $empleado], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes , 'generos' => $generos] );
+        return view('empleados.edit', ['empleado' => $empleado], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
     }
 
     /**
