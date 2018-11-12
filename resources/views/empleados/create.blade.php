@@ -55,13 +55,13 @@
                     <input type="date" name="fechadeingreso" class="form-control">   
                     <label>Genero*</label>
                     <select name="genero" id="genero" class="form-control">
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
                     </select>                
                     <label>Estado*</label>
                     <select name="estado" id="estado" class="form-control">
-                    <option value="activo">Activo</option>
-                    <option value="inactivo">Inactivo</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
                     </select>
                 </div>
                 <a href="{{ route('empleados.index') }}" class="btn btn-default">Cancelar</a>
