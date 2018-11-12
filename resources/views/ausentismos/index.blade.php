@@ -13,7 +13,7 @@
                 <th>Fecha de inicio</th>
                 <th>Tiempo de Ausencia</th>
                 <th>Grado</th>
-                <th>Observacion</th>>
+                <th>Observacion</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
         </thead> 
