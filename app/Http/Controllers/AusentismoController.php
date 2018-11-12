@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ausentismo;
+use App\Empleado;
 use Illuminate\Http\Request;
 
 class AusentismoController extends Controller
@@ -15,8 +16,9 @@ class AusentismoController extends Controller
     public function index()
     {
         $ausentismos = Ausentismo::paginate(5);
+        $empleados = Empleado::all();
 
-        return view('ausentimos.index', ['ausentimos' => $ausentismos]);
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'));
     }
 
     /**
@@ -26,7 +28,8 @@ class AusentismoController extends Controller
      */
     public function create()
     {
-        return view('ausentismos.create');
+        $empleados = Empleado::all();
+        return view('ausentimos.index', ['ausentimos' => $ausentismos], compact('empleados'));
     }
 
     /**
@@ -72,9 +75,10 @@ class AusentismoController extends Controller
      * @param  \App\Ausentismo  $ausentismo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ausentismo $ausentismo)
+    public function edit($id)
     {
         $ausentismo = Ausentismo::find($id);
+        $empleados = Empleado::all();
 
         return view('ausentismos.edit', ['ausentismo' => $ausentismo]);
     }

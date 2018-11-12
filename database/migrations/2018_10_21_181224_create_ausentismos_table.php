@@ -16,7 +16,7 @@ class CreateAusentismosTable extends Migration
         Schema::create('ausentismos', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha_registro');
-            $table->integer('id_empleado')->unsigned();
+            $table->integer('id_empleado');
             $table->foreign('id_empleado')->references('id')->on('empleados');
             $table->integer('id_tipoausentismo')->unsigned();
             $table->foreign('id_tipoausentismo')->references('id')->on('id_tipoausentismos');            
