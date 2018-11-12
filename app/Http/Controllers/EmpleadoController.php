@@ -28,7 +28,7 @@ class EmpleadoController extends Controller
         ->select('empleados.*', 'tipo_vinculacions.name as nameTipoVinculacion', 'sedes.name as nameSede', 'cargos.name as nameCargo')
         ->paginate(5);
 
-        return view('empleados.index', ['empleados' => $empleados], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes, ] );
+        return view('empleados.index')->with(['empleados' => $empleados, 'cargos'=> $cargos, 'tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes]);
     }
 
     /**
@@ -41,7 +41,7 @@ class EmpleadoController extends Controller
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
         $sedes = Sede::all();
-        return view('empleados.create', compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
+        return view('empleados.create')->with( ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes, 'cargos' => $cargos] );
     }
 
     /**
@@ -116,9 +116,9 @@ class EmpleadoController extends Controller
             'name' => 'required',
             'apellido' => 'required',
             'telefono' => 'required',
-            'correoelectornico' => 'required',
-            'tipoid' => 'required',
-            'fechanacimiento' => 'required',
+            'correoelectronico' => 'required',
+            
+            //'fechanacimiento' => 'required',
             'salario' => 'required',
             'id_cargo' => 'required',
             'id_sede' => 'required',

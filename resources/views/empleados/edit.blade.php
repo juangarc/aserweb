@@ -53,7 +53,35 @@
                             <option value="{{ $tipovinculacion['id'] }}">{{ $tipovinculacion['name'] }}</option>
                             @endforeach
                             </select>
-                                    </div>
+                            <label>Salario* </label>
+                    <input type="number" name="salario" value="{{$empleado->salario}}" class="form-control">
+                    <label>Cargo* </label>
+                    {{-- <input type="select" name="id_cargo" class="form-control"> --}}
+                    <select name="id_cargo" id="id_cargo" class="form-control">
+                        @foreach ($cargos as $cargo) 
+                        <option value="{{ $cargo['id'] }}">{{ $cargo['name'] }}</option>
+                        @endforeach
+                    </select>
+                    <label>Sede*</label>
+                    {{-- <input type="select" name="id_sede" class="form-control"> --}}
+                    <select name="id_sede" id="id_sede" class="form-control">
+                        @foreach ($sedes as $sede) 
+                        <option value="{{ $sede['id'] }}">{{ $sede['name'] }}</option>
+                        @endforeach
+                    </select>          
+                    <label>Fehca de Ingreso*</label>
+                    <input type="date" name="fechadeingreso" value="{{$empleado->fechadeingreso}}" class="form-control">   
+                    <label>Genero*</label>
+                    <select name="genero" id="genero" class="form-control">
+                    <option value="MASCULINO">MASCULINO</option>
+                    <option value="FEMENINO">FEMENINO</option>
+                    </select>                
+                    <label>Estado*</label>
+                    <select name="estado" id="estado" class="form-control">
+                    <option value="ACTIVO">ACTIVO</option>
+                    <option value="INACTIVO">INACTIVO</option>
+                    </select>
+                       </div>
 
 
 
