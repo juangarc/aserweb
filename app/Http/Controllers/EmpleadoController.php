@@ -93,9 +93,7 @@ class EmpleadoController extends Controller
         $cargos = Cargo::all();
         $tipovinculaciones = TipoVinculacion::all();
         $sedes = Sede::all();
-
-
-        return view('empleados.edit', ['empleado' => $empleado], compact('cargos'), ['tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes] );
+        return view('empleados.edit')->with(['empleado' => $empleado, 'cargos' => $cargos, 'tipovinculaciones' => $tipovinculaciones, 'sedes' => $sedes]);
     }
 
     /**
