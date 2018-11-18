@@ -49,7 +49,9 @@
                     <option value="SEVERO">SEVERO</option>
                     </select>                
                     <label>Observacion* </label>
-                    <input type="text" name="observacion" class="form-control">    
+                    <input type="text" name="observacion" class="form-control"> 
+                    <label>Documento* </label>   
+                    <input type="file" name="documento" >
                     </div>
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
                    <button type="submit" class="btn btn-primary">Crear</button>       
