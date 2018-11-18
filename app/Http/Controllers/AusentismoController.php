@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ausentismo;
 use App\Empleado;
 use App\Tipoausentismo;
+use App\Cargo;
 use Illuminate\Http\Request;
 use DB;
 
@@ -19,13 +20,15 @@ class AusentismoController extends Controller
     {
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
+        $cargos = Cargo::all();
         $ausentismos = DB::table('ausentismos')
         ->join('tipoausentismos', 'tipoausentismos.id','=', 'ausentismos.id_tipoausentismo')
         ->join('empleados', 'empleados.id', '=', 'ausentismos.id_empleado')
-        ->select('ausentismos.*', 'tipoausentismos.name as nameTipoausentismo', 'empleados.name as nameEmpleado','empleados.apellido as apellidoEmpleado')
+        ->join('cargos', 'cargos.id', '=', 'ausentismos.id_cargo')
+        ->select('ausentismos.*', 'tipoausentismos.name as nameTipoausentismo', 'empleados.name as nameEmpleado','empleados.apellido as apellidoEmpleado', 'cargos.name as nameCargo')
         ->paginate(5);
 
-        return view('ausentismos.index', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.index')->with(['ausentismos' => $ausentismos, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
     }
 
     /**
@@ -37,7 +40,8 @@ class AusentismoController extends Controller
     {
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
-        return view('ausentismos.create', compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        $cargos = Cargo::all();
+        return view('ausentismos.create')->with(['empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
     }
 
     /**
@@ -52,7 +56,7 @@ class AusentismoController extends Controller
             'fecha_registro' => 'required',
             'id_empleado' => 'required',
             'id_tipoausentismo' => 'required',
-            'area' => 'required',
+            'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
             'grado' => 'required',
@@ -89,8 +93,9 @@ class AusentismoController extends Controller
         $ausentismo = Ausentismo::find($id);
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
+        $cargos = Cargo::all();
 
-        return view('ausentismos.edit', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.edit')->with(['ausentismos' => $ausentismos, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
     }
 
     /**
@@ -106,7 +111,7 @@ class AusentismoController extends Controller
             'fecha_registro' => 'required',
             'id_empleado' => 'required',
             'id_tipoausentismo' => 'required',
-            'area' => 'required',
+            'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
             'grado' => 'required',

@@ -32,16 +32,21 @@
                         <option value="{{ $tipoausentismo['id'] }}">{{ $tipoausentismo['name'] }}</option>
                         @endforeach
                         </select>
-                    <label>Area* </label>
-                    <input type="text" name="area" class="form-control">
+                    <label>Cargo* </label>
+                    {{-- <input type="select" name="id_cargo" class="form-control"> --}}
+                    <select name="id_cargo" id="id_cargo" class="form-control">
+                        @foreach ($cargos as $cargo) 
+                        <option value="{{ $cargo['id'] }}">{{ $cargo['name'] }}</option>
+                        @endforeach
+                        </select>
                     <label>Fecha de Inicio* </label>
                     <input type="date" name="fecha_inicio" class="form-control">
-                    <label>Tiempo de Ausencia* </label>
-                    <input type="datetime-local" name="tiempo_ausencia" class="form-control">
+                    <label>Tiempo de Ausencia / Horas* </label>
+                    <input type="number" name="tiempo_ausencia" class="form-control">
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
-                    <option value="Leve">Leve</option>
-                    <option value="Severo">Severo</option>
+                    <option value="LEVE">LEVE</option>
+                    <option value="SEVERO">SEVERO</option>
                     </select>                
                     <label>Observacion* </label>
                     <input type="text" name="observacion" class="form-control">    

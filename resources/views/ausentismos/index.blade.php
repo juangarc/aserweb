@@ -9,7 +9,7 @@
                 <th>Fecha de Registro</th>
                 <th>Nombre de Empleado</th>
                 <th>Tipo de Ausentismo</th>
-                <th>Area</th>
+                <th>Cargo</th>
                 <th>Fecha de inicio</th>
                 <th>Tiempo de Ausencia</th>
                 <th>Grado</th>
@@ -24,7 +24,7 @@
                 <td>{{$ausentismo->fecha_registro}}</td>
                 <td>{{$ausentismo->nameEmpleado." ".$ausentismo->apellidoEmpleado}}</td>
                 <td>{{$ausentismo->nameTipoausentismo}}</td>
-                <td>{{$ausentismo->area}}</td>
+                <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
                 <td>{{$ausentismo->Grado}}</td>

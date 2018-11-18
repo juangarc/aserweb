@@ -20,10 +20,11 @@ class CreateAusentismosTable extends Migration
             $table->foreign('id_empleado')->references('id')->on('empleados');
             $table->integer('id_tipoausentismo')->unsigned();
             $table->foreign('id_tipoausentismo')->references('id')->on('tipoausentismos');            
-            $table->text('area', 100);
+            $table->integer('id_cargo')->unsigned();
+            $table->foreign('id_cargo')->references('id')->on('cargos');
             $table->date('fecha_inicio');
-            $table->timestamp('tiempo_ausencia');
-            $table->enum('Grado',['Leve','Severo']);
+            $table->integer('tiempo_ausencia');
+            $table->enum('Grado',['LEVE','SEVERO']);
             $table->text('observacion',100);
             $table->unique('id');
 
