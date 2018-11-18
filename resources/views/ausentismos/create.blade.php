@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('ausentismos.store') }}">
+            <form method="post" action="{{ route('ausentismos.store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>Fecha de Registro* </label>

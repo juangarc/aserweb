@@ -29,6 +29,7 @@
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
                 <td>{{$ausentismo->Grado}}</td>
+                <td>{{$ausentismo->documento}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('ausentismos.edit', $ausentismo->id) }}" class="btn btn-info" >Editar<a></td/>
                         <td style="text-align: center;"> <form action="{{route('ausentismos.destroy', $ausentismo->id)}}" method="post">

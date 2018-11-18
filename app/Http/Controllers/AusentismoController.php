@@ -61,9 +61,14 @@ class AusentismoController extends Controller
             'tiempo_ausencia' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
-        ]);
+        ]);       
 
          Ausentismo::create($request->all());
+         if($request->hasFile('documento')){
+            dd($request->file('documento')->store('public'));
+
+        }
+        //$ausentismos->save();
 
          return redirect()->route('ausentismos.index')
                         ->with('success','Post add successfully.');
@@ -119,6 +124,11 @@ class AusentismoController extends Controller
         ]);
 
         Ausentismo::find($id)->update($request->all());
+        if($request->hasFile('documento')){
+            $request->file('documento')->store('public');
+
+        }
+        
         return redirect()->route('ausentismos.index')
                         ->with('success','Ausentismo updated successfully');
     }
