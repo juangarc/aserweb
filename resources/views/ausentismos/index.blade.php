@@ -12,9 +12,9 @@
                 <th>Cargo</th>
                 <th>Fecha de inicio</th>
                 <th>Tiempo de Ausencia</th>
+                <th>Costo de Ausencia</th>
                 <th>Grado</th>
                 <th>Observacion</th>
-                <th>Documento</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
             </tr>
         </thead> 
@@ -28,9 +28,9 @@
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
+                <td>{{$ausentismo->costo_ausencia}}</td>
                 <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
-                <td>{{$ausentismo->documento}}</td>
                 <td style="text-align: center;">
                     <a href="{{ route('ausentismos.edit', $ausentismo->id) }}" class="btn btn-info" >Editar<a></td/>
                         <td style="text-align: center;"> <form action="{{route('ausentismos.destroy', $ausentismo->id)}}" method="post">

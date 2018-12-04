@@ -41,7 +41,10 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
         $cargos = Cargo::all();
-        return view('ausentismos.create')->with(['empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
+        $salario = $this->absenceCost(1123);
+        var_dump($salario);
+        return view('ausentismos.create')->with(['empleados' => $empleados, 'tipoausentismos' => $tipoausentismos,
+                                                 'cargos' => $cargos, 'salario' => $salario]);
     }
 
     /**
@@ -59,16 +62,12 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
+            'costo_ausencia' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
-        ]);       
+        ]);
 
          Ausentismo::create($request->all());
-         if($request->hasFile('documento')){
-            dd($request->file('documento')->store('public'));
-
-        }
-        //$ausentismos->save();
 
          return redirect()->route('ausentismos.index')
                         ->with('success','Post add successfully.');
@@ -119,16 +118,12 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
+            'costo_ausencia' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
         ]);
 
         Ausentismo::find($id)->update($request->all());
-        if($request->hasFile('documento')){
-            $request->file('documento')->store('public');
-
-        }
-        
         return redirect()->route('ausentismos.index')
                         ->with('success','Ausentismo updated successfully');
     }
@@ -145,4 +140,15 @@ class AusentismoController extends Controller
         return redirect()->route('ausentismos.index')
                         ->with('success', 'Ausentismo deleted successfully.');
     }
+
+    public function absenceCost ($id_empleado) 
+    {
+        $salario = DB::table('empleados')
+        ->select('salario')
+        ->where('id','=', $id_empleado)
+        ->get();
+
+        return $salario;
+    }
 }
+
