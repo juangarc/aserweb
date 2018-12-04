@@ -18,7 +18,7 @@ class EmpleadoController extends Controller
      */ 
     public function index()
     {
-        $cargos = Cargo::all();
+        $cargos = Cargo::all();        
         $sedes = Sede::all();
         $tipovinculaciones = TipoVinculacion::all();
         $empleados = DB::table('empleados')

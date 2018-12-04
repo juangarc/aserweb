@@ -41,8 +41,10 @@
                         </select>
                     <label>Fecha de Inicio* </label>
                     <input type="date" name="fecha_inicio" class="form-control">
-                    <label>Tiempo de Ausencia / Horas* </label>
+                    <label>Tiempo de Ausencia / Dias* </label>
                     <input type="number" name="tiempo_ausencia" class="form-control">
+                    <label>Costo de Ausencia / $ </label>
+                    <input  type="number" name="costo" class="form-control">
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
                     <option value="LEVE">LEVE</option>

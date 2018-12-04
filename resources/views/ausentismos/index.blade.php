@@ -12,6 +12,7 @@
                 <th>Cargo</th>
                 <th>Fecha de inicio</th>
                 <th>Tiempo de Ausencia</th>
+                <th>Costo de Ausencia</th>
                 <th>Grado</th>
                 <th>Observacion</th>
                 <th colspan="2" style="text-align: center;">Accion</th>
@@ -27,6 +28,7 @@
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
+                <td>{{$ausentismo->costo_ausencia}}</td>
                 <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
                 <td style="text-align: center;">
