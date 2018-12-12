@@ -42,9 +42,9 @@
                     <label>Fecha de Inicio* </label>
                     <input type="date" name="fecha_inicio" class="form-control">
                     <label>Tiempo de Ausencia / Dias* </label>
-                    <input type="number" name="tiempo_ausencia" class="form-control">
+                    <input type="text" name="tiempo_ausencia" class="form-control">
                     <label>Costo de Ausencia / $ </label>
-                    <input  type="number" name="costo" class="form-control">
+                    <input  type="text" name="costo_ausencia" class="form-control">
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
                     <option value="LEVE">LEVE</option>
@@ -53,6 +53,18 @@
                     <label>Observacion* </label>
                     <input type="text" name="observacion" class="form-control">    
                     </div>
+                    @section('scripts')
+                    <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+                    <script>
+                    $(document).ready(function() {
+                        $("#tiempo_ausencia, #costo").stringToSlug({
+                            callback: function(text){
+                                $("#costo").val(text);
+                            }
+                        });
+                    });
+                    </script>
+                    @endsection
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
                    <button type="submit" class="btn btn-primary">Crear</button>       
             </form>          
