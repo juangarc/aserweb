@@ -42,16 +42,17 @@
                     <label>Fecha de Inicio* </label>
                     <input type="date" name="fecha_inicio" class="form-control">
                     <label>Tiempo de Ausencia / Dias* </label>
-                    <input type="number" name="tiempo_ausencia" class="form-control">
+                    <input type="text" name="tiempo_ausencia" id="tiempo_ausencia" class="form-control">
+                    <input type="button" class="btn btn-primary" value="Calcular" onclick="sumar();">
                     <label>Costo de Ausencia / $ </label>
-                    <input  type="number" name="costo" class="form-control">
+                    <input  type="text" name="costo" id="costo_ausencia" class="form-control">
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
                     <option value="LEVE">LEVE</option>
                     <option value="SEVERO">SEVERO</option>
                     </select>                
                     <label>Observacion* </label>
-                    <input type="text" name="observacion" class="form-control">    
+                    <input type="text" name="observacion" class="form-control">
                     </div>
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
                    <button type="submit" class="btn btn-primary">Crear</button>       
