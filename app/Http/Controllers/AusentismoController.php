@@ -41,10 +41,8 @@ class AusentismoController extends Controller
         $empleados = Empleado::all();
         $tipoausentismos = Tipoausentismo::all();
         $cargos = Cargo::all();
-        $salario = $this->absenceCost(1123);
-        var_dump($salario);
         return view('ausentismos.create')->with(['empleados' => $empleados, 'tipoausentismos' => $tipoausentismos,
-                                                 'cargos' => $cargos, 'salario' => $salario]);
+                                                 'cargos' => $cargos]);
     }
 
     /**
@@ -62,7 +60,7 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
-            'costo_ausencia' => 'required',
+            'costo' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
         ]);
@@ -118,7 +116,7 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
-            'costo_ausencia' => 'required',
+            'costo' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
         ]);
@@ -141,20 +139,5 @@ class AusentismoController extends Controller
                         ->with('success', 'Ausentismo deleted successfully.');
     }
 
-    public function absenceCost ($id_empleado) 
-    {
-        $salario = DB::table('empleados')
-        ->select('salario')
-        ->where('id','=', $id_empleado)
-        ->get();
-
-        return $salario;
-    }
-
-    public function showEmpleado(Empleado $empleado)
-    {
-        $empleado = Empleado::find($id);
-        return view('empleados.show')->with('empleado', $empleado);
-    }
 }
 

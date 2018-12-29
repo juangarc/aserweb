@@ -28,7 +28,7 @@
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
-                <td>{{$ausentismo->costo_ausencia}}</td>
+                <td>{{$ausentismo->costo}}</td>
                 <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
                 <td style="text-align: center;">
