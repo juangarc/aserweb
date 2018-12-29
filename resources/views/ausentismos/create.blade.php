@@ -57,9 +57,9 @@
                     <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
                     <script>
                     $(document).ready(function() {
-                        $("#tiempo_ausencia, #costo").stringToSlug({
+                        $("#tiempo_ausencia, #costo_ausencia").stringToSlug({
                             callback: function(text){
-                                $("#costo").val(text);
+                                $("#costo_ausencia").val(text);
                             }
                         });
                     });
