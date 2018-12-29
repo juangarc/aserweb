@@ -18,6 +18,10 @@
                 <div class="form-group">
                     <label>Fecha de Registro* </label>
                     <input type="date" name="fecha_registro" class="form-control">
+                    <label>Identificacion del empleado* </label>
+                    <input type="number" name="id_iden" class="form-control">
+                    <input type="button" class="btn btn-primary" value="Buscar">
+                    <br>
                     <label>Nombre de Empleado* </label>
                     {{-- <input type="select" name="id_empleado" class="form-control"> --}}
                     <select name="id_empleado" id="id_empleado" class="form-control">
@@ -44,6 +48,7 @@
                     <label>Tiempo de Ausencia / Dias* </label>
                     <input type="text" name="tiempo_ausencia" id="tiempo_ausencia" class="form-control">
                     <input type="button" class="btn btn-primary" value="Calcular" onclick="sumar();">
+                    <br>
                     <label>Costo de Ausencia / $ </label>
                     <input  type="text" name="costo" id="costo_ausencia" class="form-control">
                     <label>Grado* </label>
