@@ -54,18 +54,6 @@
                     <label>Observacion* </label>
                     <input type="text" name="observacion" class="form-control">
                     </div>
-                    @section('scripts')
-                    <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
-                    <script>
-                    $(document).ready(function() {
-                        $("#tiempo_ausencia, #costo").stringToSlug({
-                            callback: function(text){
-                                $("#costo").val(text);
-                            }
-                        });
-                    });
-                    </script>
-                    @endsection
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
                    <button type="submit" class="btn btn-primary">Crear</button>       
             </form>          
