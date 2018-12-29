@@ -23,12 +23,7 @@
                     <input type="button" class="btn btn-primary" value="Buscar">
                     <br>
                     <label>Nombre de Empleado* </label>
-                    {{-- <input type="select" name="id_empleado" class="form-control"> --}}
-                    <select name="id_empleado" id="id_empleado" class="form-control">
-                        @foreach ($empleados as $empleado) 
-                        <option value="{{ $empleado['id'] }}">{{ $empleado['name']." ".$empleado['apellido'] }}</option>
-                        @endforeach
-                        </select>
+                    <input type="text" name="id_empleado" class="form-control">
                     <label>Tipo de Ausentismo* </label>
                     {{-- <input type="select" name="id_tipoausentismo" class="form-control"> --}}
                     <select name="id_tipoausentismo" id="id_tipoausentismo" class="form-control">
