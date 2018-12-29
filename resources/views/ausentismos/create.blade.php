@@ -42,16 +42,23 @@
                     <label>Fecha de Inicio* </label>
                     <input type="date" name="fecha_inicio" class="form-control">
                     <label>Tiempo de Ausencia / Dias* </label>
+<<<<<<< HEAD
+                    <input type="text" name="tiempo_ausencia" id="tiempo_ausencia" class="form-control">
+                    <input type="button" class="btn btn-primary" value="Calcular" onclick="sumar();">
+                    <label>Costo de Ausencia / $ </label>
+                    <input  type="text" name="costo" id="costo_ausencia" class="form-control">
+=======
                     <input type="text" name="tiempo_ausencia" class="form-control">
                     <label>Costo de Ausencia / $ </label>
                     <input  type="text" name="costo_ausencia" class="form-control">
+>>>>>>> e78b7d0a7015e41efc1c3cce7d839caf70a84f78
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
                     <option value="LEVE">LEVE</option>
                     <option value="SEVERO">SEVERO</option>
                     </select>                
                     <label>Observacion* </label>
-                    <input type="text" name="observacion" class="form-control">    
+                    <input type="text" name="observacion" class="form-control">
                     </div>
                     @section('scripts')
                     <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>

@@ -150,5 +150,11 @@ class AusentismoController extends Controller
 
         return $salario;
     }
+
+    public function showEmpleado(Empleado $empleado)
+    {
+        $empleado = Empleado::find($id);
+        return view('empleados.show')->with('empleado', $empleado);
+    }
 }
 
