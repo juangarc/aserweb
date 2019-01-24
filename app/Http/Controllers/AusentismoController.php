@@ -139,5 +139,22 @@ class AusentismoController extends Controller
                         ->with('success', 'Ausentismo deleted successfully.');
     }
 
+    public function showDataEmploy ($id)
+     {
+        $employ = Empleado::find($id);
+        echo response()->json($employ);
+        // $output = "";
+        // if ($request->ajax()) {
+        //     $employ = DB::table('empleados')->where('id', '=','1123')->get();
+        //     return Response($output);
+
+        // }
+        // echo "el id recibido por ajax es {$id}";
+        // $employ = Empleado::find($id);
+
+        // echo "la consulta trae: <br>";
+        // var_dump($employ);
+    }
+
 }
 

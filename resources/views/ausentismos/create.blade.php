@@ -55,7 +55,8 @@
                     <input type="text" name="observacion" class="form-control">
                     </div>
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
-                   <button type="submit" class="btn btn-primary">Crear</button>       
+                   <button type="submit" class="btn btn-primary">Crear</button>
+                   <input type="button" class="btn btn-primary" value="prueba" id="prueba" onclick="getMessage(1123);">       
             </form>          
         </div>
 @endsection
