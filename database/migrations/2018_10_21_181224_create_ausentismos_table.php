@@ -19,7 +19,7 @@ class CreateAusentismosTable extends Migration
             $table->integer('id_empleado');
             $table->foreign('id_empleado')->references('id')->on('empleados');
             $table->integer('id_tipoausentismo')->unsigned();
-            $table->foreign('id_tipoausentismo')->references('id')->on('tipoausentismos');            
+            $table->foreign('id_tipoausentismo')->references('id')->on('tipoausentismos');                        
             $table->integer('id_cargo')->unsigned();
             $table->foreign('id_cargo')->references('id')->on('cargos');
             $table->date('fecha_inicio');
