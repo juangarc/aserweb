@@ -38,5 +38,6 @@ Route::resource('/empleados','EmpleadoController');
 Route::resource('/ausentismos','AusentismoController');
 
 Route::get('/prueba/{id}', 'AusentismoController@showDataEmploy');
+Route::resource('/prorrogas','ProrrogaController');
 
  

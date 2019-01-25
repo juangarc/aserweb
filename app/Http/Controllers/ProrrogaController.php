@@ -30,7 +30,7 @@ class ProrrogaController extends Controller
     public function create()
     {
         $ausentismos = Ausentismo::all();
-        return view('prorrogas.index')->with(['prorrogas' => $prorrogas,'ausentismos' => $ausentismos]);
+        return view('prorrogas.create')->with(['prorrogas' => $prorrogas,'ausentismos' => $ausentismos]);
     
     }
 

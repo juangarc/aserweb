@@ -37,20 +37,17 @@
                            {{csrf_field()}}
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
-                        <td style="text-align: center;"> <form action="{{route('empleados.destroy', $ausentismo->id)}}" method="post">
-                            <input name="_method" type="hidden" value="DELETE">
-                                <button class="btn btn-info btn-sm" type="submit">
-                                    <i class="icon-check">Prorroga</i>
-                                </button>
-                        </td>
+                           <td>
+                           <a href="{{ route('/views/prorroga.prorrogas.create') }}" class="btn btn-success">+ Prorroga<a>
+                           </td>
                        </form>
-                       </td>
-
+                       </td>                  
                    </tr>
-                   @endforeach
+                   @endforeach          
                </tbody>
            </table>
            {!!$ausentismos->render()!!}
-           <a href="{{ route('ausentismos.create') }}" class="btn btn-success"  >Crear nuevo Ausentismo<a>
+           <a href="{{ route('ausentismos.create') }}" class="btn btn-success">Crear Ausentismo<a>
+           
            </div>
            @stop
