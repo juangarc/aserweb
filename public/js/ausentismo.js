@@ -17,8 +17,10 @@ function getMessage(){
         dataType: 'json',
         success:function(data){
             //console.log(data.name)
-            $('#id_emple').val(data.name);
+            $('#id_emple').val(data.name + " " + data.apellido);
+            $('#id_emple').prop('disabled', true);
             $('#costo_ausencia').val(data.salario);
+            $('#costo_ausencia').prop('disabled', true);
         }
     });
 }
