@@ -20,8 +20,8 @@ class CreateProrrogasTable extends Migration
             $table->enum('icapacidad',['PERMANENTE','PARCIAL']);
             $table->float('%incapacidad');
             $table->text('seguimiento_incapacidad',100);
-            // $table->integer('id_ausentismo')->unsigned();
-            // $table->foreign('id_ausentismo')->references('id')->on('ausentismos');            
+            $table->integer('id_ausentismo')->unsigned();
+            $table->foreign('id_ausentismo')->references('id')->on('ausentismos');            
             $table->timestamps();
         });
     }

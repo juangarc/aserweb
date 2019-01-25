@@ -15,7 +15,7 @@
                 <th>Costo de Ausencia</th>
                 <th>Grado</th>
                 <th>Observacion</th>
-                <th colspan="2" style="text-align: center;">Accion</th>
+                <th colspan="3" style="text-align: center;">Accion</th>
             </tr>
         </thead> 
         <tbody>
@@ -37,6 +37,12 @@
                            {{csrf_field()}}
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                        <td style="text-align: center;"> <form action="{{route('empleados.destroy', $ausentismo->id)}}" method="post">
+                            <input name="_method" type="hidden" value="DELETE">
+                                <button class="btn btn-info btn-sm" type="submit">
+                                    <i class="icon-check">Prorroga</i>
+                                </button>
+                        </td>
                        </form>
                        </td>
 

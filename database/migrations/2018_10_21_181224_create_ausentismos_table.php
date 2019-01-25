@@ -21,9 +21,7 @@ class CreateAusentismosTable extends Migration
             $table->integer('id_tipoausentismo')->unsigned();
             $table->foreign('id_tipoausentismo')->references('id')->on('tipoausentismos');                        
             $table->integer('id_cargo')->unsigned();
-            $table->foreign('id_cargo')->references('id')->on('cargos');   
-            $table->unsignedInteger('id_prorroga');
-            $table->foreign('id_prorroga')->references('id')->on('prorrogas');        
+            $table->foreign('id_cargo')->references('id')->on('cargos');    
             $table->date('fecha_inicio');
             $table->integer('tiempo_ausencia');
             $table->double('costo');

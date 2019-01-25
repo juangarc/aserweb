@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use app\Prorroga;
+use App\Prorroga;
+use App\Ausentismo;
 use Illuminate\Http\Request;
+use DB;
 
 class ProrrogaController extends Controller
 {
@@ -14,9 +16,10 @@ class ProrrogaController extends Controller
      */
     public function index()
     {
+        $ausentismos = Ausentismo::all();
         $prorrogas = Prorroga::paginate(5);
 
-        return view('prorrogas.index',['prorrogas' => $prorrogas]);
+        return view('prorrogas.index')->with(['prorrogas' => $prorrogas,'ausentismos' => $ausentismos]);
     }
 
     /**
@@ -26,7 +29,9 @@ class ProrrogaController extends Controller
      */
     public function create()
     {
-        return view('prorrogas.create');
+        $ausentismos = Ausentismo::all();
+        return view('prorrogas.index')->with(['prorrogas' => $prorrogas,'ausentismos' => $ausentismos]);
+    
     }
 
     /**
