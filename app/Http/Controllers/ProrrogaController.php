@@ -45,7 +45,8 @@ class ProrrogaController extends Controller
         request()->validate([
             'cantidad_dia_prorroga' => 'required',
             'fechainicio' => 'required',
-            'icapacidad','%incapacidad'=> 'required',
+            'incapacidad'  => 'required',
+            '%incapacidad'=> 'required',
             'seguimiento_incapacidad'=> 'required',
         ]);
 
@@ -95,7 +96,8 @@ class ProrrogaController extends Controller
         $this->validate($request, [
             'cantidad_dia_prorroga' => 'required',
             'fechainicio' => 'required',
-            'icapacidad','%incapacidad'=> 'required',
+            'icapacidad'  => 'required',
+            '%incapacidad'=> 'required',
             'seguimiento_incapacidad'=> 'required',
         ]);
 

@@ -17,7 +17,7 @@ class CreateProrrogasTable extends Migration
             $table->increments('id');
             $table->time('cantidad_dia_prorroga');
             $table->date('fechainicio');
-            $table->enum('icapacidad',['PERMANENTE','PARCIAL']);
+            $table->enum('incapacidad',['PERMANENTE','PARCIAL']);
             $table->float('%incapacidad');
             $table->text('seguimiento_incapacidad',100);
             $table->integer('id_ausentismo')->unsigned();
