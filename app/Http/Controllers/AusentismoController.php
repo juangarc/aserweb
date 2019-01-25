@@ -141,8 +141,15 @@ class AusentismoController extends Controller
 
     public function showDataEmploy ($id)
      {
-        $employ = Empleado::find($id);
-        echo response()->json($employ);
+        $employ = Empleado::find($id)->toArray();
+        // var_dump($employ);
+        echo json_encode($employ);
+        //  $data = array();
+        
+        // $data['Status'] = 'ok';
+        // $data['result'] = $employ;
+
+        
         // $output = "";
         // if ($request->ajax()) {
         //     $employ = DB::table('empleados')->where('id', '=','1123')->get();

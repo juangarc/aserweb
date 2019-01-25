@@ -6,14 +6,17 @@ function sumar()
 
 }
 
-function getMessage(product_id){
+function getMessage(){
+    var codigo = document.getElementById('codigo')
+    product_id = parseInt(codigo.value);
     $.ajax({
         //headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         type:'GET',
         url:'/prueba/'+product_id,
-        
+        dataType: 'json',
         success:function(data){
-            console.log(data)
+            //console.log(data.name)
+            $('#id_emple').val(data.name);
         }
     });
 }

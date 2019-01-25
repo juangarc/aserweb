@@ -19,11 +19,11 @@
                     <label>Fecha de Registro* </label>
                     <input type="date" name="fecha_registro" class="form-control">
                     <label>Identificacion del empleado* </label>
-                    <input type="number" name="id_iden" class="form-control">
-                    <input type="button" class="btn btn-primary" value="Buscar">
+                    <input type="number" name="id_iden" class="form-control" id="codigo">
+                    <input type="button" class="btn btn-primary" value="Buscar" onclick="getMessage();">
                     <br>
                     <label>Nombre de Empleado* </label>
-                    <input type="text" name="id_empleado" class="form-control">
+                    <input type="text" name="id_empleado" class="form-control" id="id_emple">
                     <label>Tipo de Ausentismo* </label>
                     {{-- <input type="select" name="id_tipoausentismo" class="form-control"> --}}
                     <select name="id_tipoausentismo" id="id_tipoausentismo" class="form-control">
@@ -56,7 +56,7 @@
                     </div>
                     <a href="{{ route('ausentismos.index') }}" class="btn btn-default">Cancelar</a>
                    <button type="submit" class="btn btn-primary">Crear</button>
-                   <input type="button" class="btn btn-primary" value="prueba" id="prueba" onclick="getMessage(1123);">       
+                          
             </form>          
         </div>
 @endsection
