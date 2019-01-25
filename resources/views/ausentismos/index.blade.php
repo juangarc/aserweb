@@ -7,6 +7,7 @@
             <tr>
                 <th>codigo</th>
                 <th>Fecha de Registro</th>
+                <th>Identificacion</th>
                 <th>Nombre de Empleado</th>
                 <th>Tipo de Ausentismo</th>
                 <th>Cargo</th>
@@ -21,9 +22,10 @@
         <tbody>
             @foreach($ausentismos as $key => $ausentismo)
             <tr>
-                <td>{{$ausentismo->id}}  </td>
+                <td>{{$ausentismo->id}}</td>
                 <td>{{$ausentismo->fecha_registro}}</td>
-                <td>{{$ausentismo->nameEmpleado." ".$ausentismo->apellidoEmpleado}}</td>
+                <td>{{$ausentismo->id_iden}}</td>
+                <td>{{$ausentismo->id_empleado}}</td>
                 <td>{{$ausentismo->nameTipoausentismo}}</td>
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
