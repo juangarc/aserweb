@@ -40,7 +40,7 @@
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
                            <td>
-                           <a href="{{ route('/views/prorroga.prorrogas.create') }}" class="btn btn-success">+ Prorroga<a>
+                           <a href="" class="btn btn-success">+ Prorroga<a>
                            </td>
                        </form>
                        </td>                  
