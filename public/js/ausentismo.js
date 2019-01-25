@@ -1,7 +1,8 @@
 function sumar() 
 {
     var diasAusencia = document.getElementById('tiempo_ausencia').value;
-    total = parseInt(diasAusencia) * 20000;
+    var costoAusencia = document.getElementById('costo_ausencia').value;
+    total = parseInt(diasAusencia) * parseInt(costoAusencia);
     document.getElementById('costo_ausencia').value=total;
 
 }
@@ -17,6 +18,7 @@ function getMessage(){
         success:function(data){
             //console.log(data.name)
             $('#id_emple').val(data.name);
+            $('#costo_ausencia').val(data.salario);
         }
     });
 }
