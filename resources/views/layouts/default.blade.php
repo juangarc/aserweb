@@ -20,6 +20,12 @@
             </div>
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
+              <a class="navbar-brand" href="{{ url('cargos') }}">Cargos</a>
+              <a class="navbar-brand" href="{{ url('sedes') }}">Sedes</a>
+              <a class="navbar-brand" href="{{ url('tipoausentismos') }}">Tipoausentimos</a>
+              <a class="navbar-brand" href="{{ url('tipovinculacion') }}">Tipovinculacion</a>
+              <a class="navbar-brand" href="{{ url('empleados') }}">Empleados</a>
+              <a class="navbar-brand" href="{{ url('ausentismos') }}">Ausentismos</a>
  
             </ul>
           </div>

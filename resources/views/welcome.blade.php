@@ -63,6 +63,17 @@
                 margin-bottom: 30px;
             }
         </style>
+        <nav>
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="{{ url('cargos') }}">Cargos</a>
+              <a class="navbar-brand" href="{{ url('sedes') }}">Sedes</a>
+              <a class="navbar-brand" href="{{ url('tipoausentismos') }}">Tipoausentimos</a>
+              <a class="navbar-brand" href="{{ url('tipovinculacion') }}">Tipovinculacion</a>
+              <a class="navbar-brand" href="{{ url('empleados') }}">Empleados</a>
+              <a class="navbar-brand" href="{{ url('ausentismos') }}">Ausentismos</a>
+            </div>
+        </nav>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
