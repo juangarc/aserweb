@@ -78,7 +78,7 @@ class AusentismoController extends Controller
      * @param  \App\Ausentismo  $ausentismo
      * @return \Illuminate\Http\Response
      */
-    public function show(Ausentismo $ausentismo)
+    public function show(Ausentismo $ausentismos)
     {
         $ausentismos = Ausentismo::find($id);
         
