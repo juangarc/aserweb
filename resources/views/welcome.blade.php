@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -62,7 +63,42 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .container {
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
         </style>
+        <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url('/') }}">Aserweb</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+            <li><a class="navbar-brand" href="{{ url('cargos') }}">Cargos</a></li>
+            <li><a class="navbar-brand" href="{{ url('sedes') }}">Sedes</a></li>
+            <li><a class="navbar-brand" href="{{ url('tipoausentismos') }}">Tipoausentimos</a></li>
+            <li><a class="navbar-brand" href="{{ url('tipovinculacion') }}">Tipovinculacion</a></li>
+            <li><a class="navbar-brand" href="{{ url('empleados') }}">Empleados</a></li>
+            <li><a class="navbar-brand" href="{{ url('ausentismos') }}">Ausentismos</a></li>
+          </ul>
+        </div> <!--///.nav-collapse -->
+      </div>
+    </nav>
+    <!-- <nav>
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="{{ url('cargos') }}">Cargos</a>
+              <a class="navbar-brand" href="{{ url('sedes') }}">Sedes</a>
+              <a class="navbar-brand" href="{{ url('tipoausentismos') }}">Tipoausentimos</a>
+              <a class="navbar-brand" href="{{ url('tipovinculacion') }}">Tipovinculacion</a>
+              <a class="navbar-brand" href="{{ url('empleados') }}">Empleados</a>
+              <a class="navbar-brand" href="{{ url('ausentismos') }}">Ausentismos</a>
+            </div>
+        </nav> -->
     </head>
     <body>
         <div class="flex-center position-ref full-height">
