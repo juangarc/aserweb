@@ -55,7 +55,6 @@ class AusentismoController extends Controller
     {
         request()->validate([
             'fecha_registro' => 'required',
-            'id_iden' => 'required',
             'id_empleado' => 'required',
             'id_tipoausentismo' => 'required',
             'id_cargo' => 'required',

@@ -26,7 +26,7 @@ function getMessage(){
 }
 
 // $(document).ready(function() {
-//     $('#prueba').click(function() {
+//     $('#btn-edi').click(function() {
 //         alert("documento listo");
 //     });
     

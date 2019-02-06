@@ -51,5 +51,10 @@
                     </div>
                 </div>
             </div>
+            <script>
+     $(document).ready(function() {
+        alert("documento listo");    
+})
+            </script>
         </section>
 @endsection

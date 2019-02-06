@@ -27,6 +27,7 @@
         <div class="container">
  
             @yield('content')
+            @yield('scripts')
  
         </div>
         <script src="{{ asset('js/ausentismo.js') }}"></script>

@@ -34,7 +34,7 @@
                 <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
                 <td style="text-align: center;">
-                    <a href="{{ route('ausentismos.edit', $ausentismo->id) }}" class="btn btn-info" >Editar<a></td/>
+                    <a href="{{ route('ausentismos.edit', $ausentismo->id) }}" class="btn btn-info" id = "btn-edi" >Editar<a></td/>
                         <td style="text-align: center;"> <form action="{{route('ausentismos.destroy', $ausentismo->id)}}" method="post">
                            {{csrf_field()}}
                            <input name="_method" type="hidden" value="DELETE">
@@ -53,3 +53,12 @@
            
            </div>
            @stop
+    @section('scripts')
+    <script>
+    $(document).ready(function() {
+    $('#btn-edi').click(function() {
+        alert("documento listo");
+    });  
+})
+    </script>
+    @endsection
