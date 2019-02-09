@@ -60,7 +60,7 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
-            'costo' => 'required',
+            'costo_ausencia' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
         ]);
@@ -97,7 +97,7 @@ class AusentismoController extends Controller
         $tipoausentismos = Tipoausentismo::all();
         $cargos = Cargo::all();
 
-        return view('ausentismos.edit')->with(['ausentismos' => $ausentismos, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
+        return view('ausentismos.edit')->with(['ausentismo' => $ausentismo, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
     }
 
     /**
@@ -117,7 +117,7 @@ class AusentismoController extends Controller
             'id_cargo' => 'required',
             'fecha_inicio' => 'required',
             'tiempo_ausencia' => 'required',
-            'costo' => 'required',
+            'costo_ausencia' => 'required',
             'grado' => 'required',
             'observacion' => 'required',
         ]);

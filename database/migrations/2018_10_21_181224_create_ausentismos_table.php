@@ -25,7 +25,7 @@ class CreateAusentismosTable extends Migration
             $table->foreign('id_cargo')->references('id')->on('cargos');    
             $table->date('fecha_inicio');
             $table->integer('tiempo_ausencia');
-            $table->double('costo');
+            $table->double('costo_ausencia');
             $table->enum('Grado',['LEVE','SEVERO']);
             $table->text('observacion',100);
             $table->unique('id');

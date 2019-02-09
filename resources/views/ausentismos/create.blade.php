@@ -19,11 +19,11 @@
                     <label>Fecha de Registro* </label>
                     <input type="date" name="fecha_registro" class="form-control">
                     <label>Identificacion del empleado* </label>
-                    <input type="number" name="id_iden" class="form-control" id="codigo">
+                    <input type="number" name="id_empleado" class="form-control" id="codigo">
                     <input type="button" class="btn btn-primary" value="Buscar" onclick="getMessage();">
                     <br>
                     <label>Nombre de Empleado* </label>
-                    <input type="text" name="id_empleado" class="form-control" id="id_emple">
+                    <input type="text" name="id_ident" class="form-control" id="id_emple">
                     <label>Tipo de Ausentismo* </label>
                     {{-- <input type="select" name="id_tipoausentismo" class="form-control"> --}}
                     <select name="id_tipoausentismo" id="id_tipoausentismo" class="form-control">
@@ -45,7 +45,7 @@
                     <input type="button" class="btn btn-primary" value="Calcular" onclick="sumar();">
                     <br>
                     <label>Costo de Ausencia / $ </label>
-                    <input  type="text" name="costo" id="costo_ausencia" class="form-control">
+                    <input  type="number" name="costo_ausencia" id="costo_ausencia" class="form-control">
                     <label>Grado* </label>
                     <select name="grado" id="grado" class="form-control">
                     <option value="LEVE">LEVE</option>

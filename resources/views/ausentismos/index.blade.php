@@ -24,13 +24,12 @@
             <tr>
                 <td>{{$ausentismo->id}}</td>
                 <td>{{$ausentismo->fecha_registro}}</td>
-                <td>{{$ausentismo->id_iden}}</td>
                 <td>{{$ausentismo->id_empleado}}</td>
                 <td>{{$ausentismo->nameTipoausentismo}}</td>
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>
                 <td>{{$ausentismo->tiempo_ausencia}}</td>
-                <td>{{$ausentismo->costo}}</td>
+                <td>{{$ausentismo->costo_ausencia}}</td>
                 <td>{{$ausentismo->Grado}}</td>
                 <td>{{$ausentismo->observacion}}</td>
                 <td style="text-align: center;">
