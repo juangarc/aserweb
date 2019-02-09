@@ -39,7 +39,8 @@
                            <input name="_method" type="hidden" value="DELETE">
                            <button class="btn btn-danger" type="submit">Eliminar</button>
                            <td>
-                           <a href="" class="btn btn-success">+ Prorroga<a>
+                           <a href="{{ route('ausentismos.show', $ausentismo->id) }}" class="btn btn-success">Ver<a>
+                           <!-- <a href="ausentismos.show" class="btn btn-success">Ver<a> -->
                            </td>
                        </form>
                        </td>                  
