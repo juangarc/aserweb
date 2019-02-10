@@ -25,6 +25,19 @@ function getMessage(){
     });
 }
 
+function dateCompare () {
+    var fecha_aux = document.getElementById("fecha").value.split("-");
+     var Fecha1 = new Date(parseInt(fecha_aux[0]),parseInt(fecha_aux[1]-1),parseInt(fecha_aux[2]));
+     if (isNaN(Fecha1)){
+		alert("Fecha introducida incorrecta");
+		return false;
+	}
+	else{
+		alert("La fecha que has introducido es "+Fecha1);
+	}
+}
+
+
 // $(document).ready(function() {
 //     $('#btn-edi').click(function() {
 //         alert("documento listo");

@@ -32,7 +32,9 @@
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                            <input type="text" name="name" value="{{$ausentismo->observacion}}" id="cargo_title" class="form-control input-sm" >
+                                    <input type="text" name="fecha_registro" value="{{$ausentismo->fecha_registro}}" id="fecha" class="form-control" >
+                                    <input type="button" class="btn btn-primary" value="Buscar" onclick="dateCompare();">        
+                            <input type="text" name="obsevacion" value="{{$ausentismo->observacion}}" id="cargo_title" class="form-control" >
                                     </div>
                                 </div>
                                 
@@ -41,8 +43,8 @@
                          <div class="row">
                             
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <input type="submit"  value="Editar" class="btn btn-success btn-block">
-                                <a href="{{ route('ausentismos.index') }}" class="btn btn-info btn-block" >Atras</a>
+                                <input type="submit"  value="Editar" class="btn btn-success">
+                                <a href="{{ route('ausentismos.index') }}" class="btn btn-info" >Atras</a>
                             </div>  
                             
                          </div>
@@ -53,7 +55,7 @@
             </div>
             <script>
      $(document).ready(function() {
-        alert("documento listo");    
+        // alert("documento listo");    
 })
             </script>
         </section>
