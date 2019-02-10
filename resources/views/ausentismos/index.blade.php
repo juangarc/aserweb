@@ -55,10 +55,10 @@
            @stop
     @section('scripts')
     <script>
-    $(document).ready(function() {
-    $('#btn-edi').click(function() {
-        alert("documento listo");
-    });  
-})
+    // $(document).ready(function() {
+    // $('#btn-edi').click(function() {
+    //     alert("documento listo");
+    // });  
+//})
     </script>
     @endsection

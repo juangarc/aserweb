@@ -53,9 +53,28 @@
                     </div>
                 </div>
             </div>
+            <a href="#" class="btn btn-info" id="botonProrroga" >Anadir Prorroga</a>
             <script>
      $(document).ready(function() {
-        // alert("documento listo");    
+    var fecha_aux = document.getElementById("fecha").value.split("-");
+    var Fecha1 = new Date(parseInt(fecha_aux[0]),parseInt(fecha_aux[1]-1),parseInt(fecha_aux[2]));
+     Hoy = new Date();//Fecha actual del sistema
+     var AnyoFecha = Fecha1.getFullYear();
+     var MesFecha = Fecha1.getMonth();
+     var DiaFecha = Fecha1.getDate();
+      
+     var AnyoHoy = Hoy.getFullYear();
+     var MesHoy = Hoy.getMonth();
+     var DiaHoy = Hoy.getDate();
+
+                 if (AnyoFecha >= AnyoHoy && MesFecha >= MesHoy && DiaFecha >= DiaHoy){
+                    // $('#botonProrroga').prop('disabled', false);
+                    alert('Activar Boton');
+                 }
+                 else{
+                    // $('#botonProrroga').prop('disabled', true);
+                    alert('Desactivar Boton');
+                 }
 })
             </script>
         </section>

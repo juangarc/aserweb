@@ -25,17 +25,31 @@ function getMessage(){
     });
 }
 
-function dateCompare () {
+function dateCompare () { 
     var fecha_aux = document.getElementById("fecha").value.split("-");
      var Fecha1 = new Date(parseInt(fecha_aux[0]),parseInt(fecha_aux[1]-1),parseInt(fecha_aux[2]));
-     if (isNaN(Fecha1)){
-		alert("Fecha introducida incorrecta");
-		return false;
-	}
-	else{
-		alert("La fecha que has introducido es "+Fecha1);
-	}
-}
+     console.log(Fecha1.setDate(Fecha1.getDate + 5));
+     Hoy = new Date();//Fecha actual del sistema
+     var AnyoFecha = Fecha1.getFullYear();
+     var MesFecha = Fecha1.getMonth();
+     var DiaFecha = Fecha1.getDate();
+      
+     var AnyoHoy = Hoy.getFullYear();
+     var MesHoy = Hoy.getMonth();
+     var DiaHoy = Hoy.getDate();
+
+                 if (AnyoFecha >= AnyoHoy && MesFecha >= MesHoy && DiaFecha >= DiaHoy){
+                     $('#botonProrroga').prop('disabled', false);
+                    alert('Activar Boton');
+                 }
+                 else{
+                     $('#botonProrroga').prop('disabled', true);
+                    alert('Desactivar Boton');
+                 }
+    }
+         
+     
+
 
 
 // $(document).ready(function() {
