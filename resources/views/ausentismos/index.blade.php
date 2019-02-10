@@ -25,6 +25,7 @@
                 <td>{{$ausentismo->id}}</td>
                 <td>{{$ausentismo->fecha_registro}}</td>
                 <td>{{$ausentismo->id_empleado}}</td>
+                <td>{{$ausentismo->nameEmpleado . " " . $ausentismo->apellidoEmpleado}}</td>
                 <td>{{$ausentismo->nameTipoausentismo}}</td>
                 <td>{{$ausentismo->nameCargo}}</td>
                 <td>{{$ausentismo->fecha_inicio}}  </td>

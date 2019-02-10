@@ -60,8 +60,8 @@
             </form>          
         </div>
         <script>
-     $(document).ready(function() {
-        alert("documento listo");    
-})
-        </script>
+//      $(document).ready(function() {
+//         alert("documento listo");    
+// })
+//         </script>
 @endsection

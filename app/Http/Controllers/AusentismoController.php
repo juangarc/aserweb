@@ -23,9 +23,9 @@ class AusentismoController extends Controller
         $cargos = Cargo::all();
         $ausentismos = DB::table('ausentismos')
         ->join('tipoausentismos', 'tipoausentismos.id','=', 'ausentismos.id_tipoausentismo')
-        /*->join('empleados', 'empleados.id', '=', 'ausentismos.id_empleado')*/
+        ->join('empleados', 'empleados.id', '=', 'ausentismos.id_empleado')
         ->join('cargos', 'cargos.id', '=', 'ausentismos.id_cargo')
-        ->select('ausentismos.*', 'tipoausentismos.name as nameTipoausentismo', /*'empleados.name as nameEmpleado','empleados.apellido as apellidoEmpleado',*/ 'cargos.name as nameCargo')
+        ->select('ausentismos.*', 'tipoausentismos.name as nameTipoausentismo', 'empleados.name as nameEmpleado','empleados.apellido as apellidoEmpleado', 'cargos.name as nameCargo')
         ->paginate(5);
 
         return view('ausentismos.index')->with(['ausentismos' => $ausentismos, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
@@ -111,7 +111,6 @@ class AusentismoController extends Controller
     {
         $this->validate($request, [
             'fecha_registro' => 'required',
-            'id_iden' => 'required',
             'id_empleado' => 'required',
             'id_tipoausentismo' => 'required',
             'id_cargo' => 'required',
