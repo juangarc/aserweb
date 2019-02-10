@@ -80,8 +80,11 @@ class AusentismoController extends Controller
     public function show(Ausentismo $ausentismos)
     {
         $ausentismos = Ausentismo::find($id);
+        $empleados = Empleado::all();
+        $tipoausentismos = Tipoausentismo::all();
+        $cargos = Cargo::all();
         
-        return view('ausentismos.show', ['ausentismos' => $ausentismos], compact('empleados'), ['tipoausentismos' => $tipoausentismos]);
+        return view('ausentismos.show')->with(['ausentismo' => $ausentismo, 'empleados' => $empleados, 'tipoausentismos' => $tipoausentismos, 'cargos' => $cargos]);
     }
 
     /**

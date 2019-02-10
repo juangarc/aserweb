@@ -30,15 +30,56 @@
                             {{ csrf_field() }}
                             <input name="_method" type="hidden" value="PATCH">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                    <input type="text" name="fecha_registro" value="{{$ausentismo->fecha_registro}}" id="fecha" class="form-control" >
-                            <input type="text" name="obsevacion" value="{{$ausentismo->observacion}}" id="cargo_title" class="form-control" >
-                                    </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Fecha Registro* </label>
+                            <input type="date" name="fecha_registro" value="{{$ausentismo->fecha_registro}}" id="fecha" class="form-control" >
+                                </div>    
+                                <div class="form-group">
+                                    <label>Identificacion del empleado* </label>
+                            <input type="number" name="id_empleado" value="{{$ausentismo->id_empleado}}" id="codigo" class="form-control" >
+                            <input type="button" class="btn btn-primary" value="Buscar" onclick="getMessage();">
+                            <br>
                                 </div>
-                                
-                        
-                            
+                                <div class="form-group">
+                                    <label>Nombre del empleado* </label>
+                            {{-- <input type="text" name="nameEmpleado" value="{{$ausentismo->nameEmpleado . " " . $ausentismo->apellidoEmpleado}}" id="id_empleado" class="form-control" > --}}
+                            <input type="text" name="id_ident" class="form-control" id="id_emple">
+                                </div> 
+                                <div class="form-group">
+                                    <label>Tipo de ausencia* </label>
+                            <select name="id_tipoausentismo" id="id_tipoausentismo" class="form-control">
+                                    @foreach ($tipoausentismos as $tipoausentismo) 
+                                    <option value="{{ $tipoausentismo['id'] }}">{{ $tipoausentismo['name'] }}</option>
+                                    @endforeach
+                                    </select>
+                            </div> 
+                                <div class="form-group">
+                                    <label>Fecha Inicio* </label>
+                            <input type="date" name="fecha_inicio" value="{{$ausentismo->fecha_inicio}}" id="ausentismos_title" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha Final* </label>
+                            <input type="text" name="fecha_final" value="" id="final_title" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Tiempo* </label>
+                            <input type="text" name="tiempo_ausencia" value="{{$ausentismo->tiempo_ausencia}}" id="ausentismos_title" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Costo* </label>
+                            <input type="number" name=">costo_ausencia" value="{{$ausentismo->costo_ausencia}}" id="ausentismos_title" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Grado* </label>
+                            <input type="text" name="Grado" value="{{$ausentismo->Grado}}" id="ausentismos_title" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Observacion* </label>
+                            <input type="text" name="observacion" value="{{$ausentismo->observacion}}" id="cargo_title" class="form-control" >
+                                </div>
+                            </div>  
+
                          <div class="row">
                             
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -66,10 +107,10 @@
      var MesFecha = Fecha1.getMonth() + 1;
      var DiaFecha = Fecha1.getDate() + diasAnadir;
      
-     var Fecha2 = AnyoFecha+"-"+MesFecha+"-"+DiaFecha; 
+     var Fecha2 = DiaFecha+"/"+MesFecha+"/"+AnyoFecha; 
     //  var Fecha3 = Date.parse(Fecha2);
     //  var Fecha4 = new Date(Fecha3);
-    document.getElementById('cargo_title').value=Fecha2;
+     document.getElementById('final_title').value=Fecha2;
     console.log(Fecha2);
      
       

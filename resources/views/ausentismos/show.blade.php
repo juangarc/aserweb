@@ -8,7 +8,7 @@
                         <h2> Ausentismos</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('ausentimos.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('ausentimos.index')}}"> Back</a>
                     </div>
                 </div>
             </div>
@@ -21,10 +21,6 @@
                     <!-- <div class="form-group">
                         <strong>Nombre:</strong>
                         {{ $ausentismo->fecha_registro }}
-                    </div>
-                    <div class="form-group">
-                        <strong>Nombre:</strong>
-                        {{ $ausentismo->id_iden }}
                     </div>
                     <div class="form-group">
                         <strong>Nombre:</strong>
