@@ -33,7 +33,6 @@
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                     <input type="text" name="fecha_registro" value="{{$ausentismo->fecha_registro}}" id="fecha" class="form-control" >
-                                    <!-- <input type="button" class="btn btn-primary" value="Buscar" onclick="dateCompare();">         -->
                             <input type="text" name="obsevacion" value="{{$ausentismo->observacion}}" id="cargo_title" class="form-control" >
                                     </div>
                                 </div>
@@ -78,14 +77,13 @@
      var MesHoy = Hoy.getMonth();
      var DiaHoy = Hoy.getDate();
 
-                  if (AnyoFecha >= AnyoHoy && MesFecha >= MesHoy && DiaFecha >= DiaHoy){
-                      $('#botonProrroga').prop('disabled', false);
-                     alert('Activar Boton');
-                  }
-                  else{
-                      $('#botonProrroga').prop('disabled', true);
-                     alert('Desactivar Boton');
-                  }
+     var producto1 = document.getElementById('botonProrroga');
+                 if (AnyoFecha >= AnyoHoy && MesFecha >= MesHoy && DiaFecha >= DiaHoy){
+                    producto1.style.display = 'inline';
+                 }
+                 else{
+                    producto1.style.display = 'none';
+                 }
     })
             </script>
         </section>
