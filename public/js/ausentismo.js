@@ -28,7 +28,6 @@ function getMessage(){
 function dateCompare () { 
     var fecha_aux = document.getElementById("fecha").value.split("-");
      var Fecha1 = new Date(parseInt(fecha_aux[0]),parseInt(fecha_aux[1]-1),parseInt(fecha_aux[2]));
-     console.log(Fecha1.setDate(Fecha1.getDate + 5));
      Hoy = new Date();//Fecha actual del sistema
      var AnyoFecha = Fecha1.getFullYear();
      var MesFecha = Fecha1.getMonth();
@@ -38,13 +37,12 @@ function dateCompare () {
      var MesHoy = Hoy.getMonth();
      var DiaHoy = Hoy.getDate();
 
+     var producto1 = document.getElementById('botonProrroga');
                  if (AnyoFecha >= AnyoHoy && MesFecha >= MesHoy && DiaFecha >= DiaHoy){
-                     $('#botonProrroga').prop('disabled', false);
-                    alert('Activar Boton');
+                    producto1.style.display = 'inline';
                  }
                  else{
-                     $('#botonProrroga').prop('disabled', true);
-                    alert('Desactivar Boton');
+                    producto1.style.display = 'none';
                  }
     }
          
